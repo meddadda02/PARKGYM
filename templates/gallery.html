@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Gallery
+{% endblock title %}
+{% block body %}
+
+<div class="container mt-2">
+  <center><h1>Gallery</h1></center>
+
+  {% for post in posts %}
+    {% if forloop.counter0|divisibleby:3 %}
+      <div class="row mb-4"> <!-- Start a new row every 3 images, with spacing -->
+    {% endif %}
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{ post.img.url }}" class="card-img-top" alt="Image" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">Uploaded On : {{ post.timeStamp }} </p>
+        </div>
+      </div>
+    </div>
+
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+      </div> <!-- Close the row after every 3rd image or at the end of posts -->
+    {% endif %}
+  {% endfor %}
+
+</div>
+
+{% endblock body %}

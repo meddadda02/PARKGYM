@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Park Gym</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.avif" rel="icon">
+  <link href="static/assets/img/favicon.avif" rel="favicon">
+
+  <link href="static/assets/js/fixehead.js">
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="static/assets/css/main.css" rel="stylesheet">
+</head>
+
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="static/assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">ParkGym</h1><span>. </span>
+      </a>
+
+      <nav id="navmenu" class="navmenu" >
+        <ul>
+          <li><a href="/" onclick="setActive(this)">Home<br></a></li>
+          <li><a href="/gallery" onclick="setActive(this)">Gallery</a></li>
+          <li><a href="/contact" onclick="setActive(this)">contact</a></li>
+          <li class="dropdown" onclick="setActive(this)"><a href="#"><span>Membership</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/join"> Enroll</a></li>
+              <li><a href="/attendance">Attendance</a></li>
+              <li><a href="/profile">View Profile</a></li>
+            </ul>
+          </li>
+          {% if not request.user.is_authenticated %}
+          <li><a class="nav-link scrollto" href="/signup">Sing Up</a></li>
+          {%else %}
+          <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+          {%endif%}
+        
+        
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      {% if  request.user.is_authenticated %}
+      <a class="btn-getstarted" href="/">Welcome</a>
+      {%endif%}
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="static/assets/img/musculation.jpg" alt="" data-aos="fade-in">
+
+      <div class="container">
+
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-8">
+            <h2>Begin Today, Keep Going Always<span>.</span></h2>
+            <p>Join Park Gym</p>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="static/assets/img/fitnesspark.jpg" class="img-fluid" alt="Image du gym" style="width: 100%; height: auto;">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <!-- Directement les titres sans conteneur supplémentaire -->
+            <div class="container section-title" data-aos="fade-up">
+              <h2>PARKGYM</h2>
+            </div><!-- End Section Title -->
+            <h3 style="margin-bottom: 0;">Bienvenue à Park Gym</h3>
+    
+            <p class="fst-italic">
+              votre espace dédié à la performance physique et à la remise en forme. Que vous soyez un débutant ou un athlète confirmé, notre salle est conçue pour répondre à tous vos objectifs de musculation et de fitness.
+            </p>
+            
+            <h3>Nos services et équipements :</h3>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>Machines de musculation modernes : Bénéficiez d'un équipement de pointe pour travailler tous les groupes musculaires dans un environnement sécurisé et motivant.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Poids libres et haltères : Que vous souhaitiez développer votre force ou tonifier votre corps, notre vaste gamme de poids est adaptée à tous les niveaux.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Espace cardio : En complément de vos séances de musculation, profitez de nos tapis de course, vélos et elliptiques pour améliorer votre endurance et brûler des calories.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Cours collectifs : Participez à nos sessions de renforcement musculaire, de stretching ou de HIIT pour varier vos entraînements et vous motiver en groupe.</span></li>
+            </ul>
+            
+            <h3>Un espace conçu pour vous :</h3>
+            <p>
+              Chez Park Gym, nous nous engageons à offrir un environnement convivial et motivant, où chacun peut progresser à son rythme. Nos installations sont équipées de vestiaires modernes, de douches et d’un espace de récupération pour votre confort.
+              Rejoignez-nous dès aujourd'hui et commencez à atteindre vos objectifs de musculation dans un cadre professionnel et motivant.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+ 
+    <section id="features" class="features section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <img src="static/assets/img/fitpa.jpg" alt="Gym Image" class="img-fluid">
+          </div>
+          <div class="col-lg-6">
+            <div class="features-item d-flex mt-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="image-container me-3">
+                <img src="static/assets/img/bras.png" alt="Arms Program" class="img-fluid small-image" style="width: 50px;">
+              </div>
+              <div>
+                <a href="https://row.gymshark.com/blog/article/best-arm-exercises" style="color: black; font-weight: bold;">Programme for Arms</a>
+                <p>Follow this program to improve your arm strength.</p>
+              </div>
+            </div>
+            <!-- Repeat similar structure for each program -->
+            <div class="features-item d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="image-container me-3">
+                <img src="static/assets/img/chest.png" alt="Chest Program" class="img-fluid small-image" style="width: 50px;">
+              </div>
+              <div>
+                <a href="#" style="color: black; font-weight: bold;">Programme for Chest</a>
+                <p>Develop your chest muscles with this program.</p>
+              </div>
+            </div>
+
+            <div class="features-item d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="image-container me-3">
+                <img src="static/assets/img/back.png" alt="Back Program" class="img-fluid small-image" style="width: 50px;">
+              </div>
+              <div>
+                <a href="https://www.bodybuilding.com/content/back-workouts-for-men-the-6-best-routines-for-bigger-lats.html" style="color: black; font-weight: bold;">Programme for back</a>
+                <p>Develop your back muscles with this program.</p>
+              </div>
+            </div>
+
+            <div class="features-item d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="image-container me-3">
+                <img src="static/assets/img/legs.png" alt="legs Program" class="img-fluid small-image" style="width: 50px;">
+              </div>
+              <div>
+                <a href="https://www.bodybuilding.com/content/leg-workouts-for-men-7-best-workouts-for-quads-glutes-hams.html" style="color: black; font-weight: bold;">Programme for legs</a>
+                <p>Develop your legs muscles with this program.</p>
+              </div>
+            </div>
+            <div class="features-item d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="image-container me-3">
+                <img src="static/assets/img/shoulders.png" alt="Chest Program" class="img-fluid small-image" style="width: 50px;">
+              </div>
+              <div>
+                <a href="https://www.goldsgym.com/blog/7-shoulder-exercises-for-strength-and-stability/?srsltid=AfmBOooTBNSc2VGEIGkivfld2em3xjjoLMVd5e7nRPciJ2ZEQ09lP4qd" style="color: black; font-weight: bold;">Programme for Shoulders</a>
+                <p>Develop your shoulders muscles with this program.</p>
+              </div>
+            </div>
+            <!-- Additional items for Back, Legs, and Shoulders follow the same structure -->
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Check our Services</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+         
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+                <a href="/profile" class="stretched-link">
+                  <img src="static/assets/img/nutrition.png" alt="Compléments alimentaires" class="img-fluid" style="margin-bottom: 10px; max-width: 40%; height: auto;">
+                  <h3>Programme Nutrition</h3>
+                </a>
+                <p>pour établir des habitudes alimentaires saines, à atteindre des objectifs de poids, et à prévenir des maladies.</p>
+            </div>
+         </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+                <a href="https://yas-coach.com/?gad_source=1&gclid=Cj0KCQjw1Yy5BhD-ARIsAI0RbXbAekvv9ph9gvSKtWSCw1QqWoLa5QwhUQqO3-_Z1-QPIR9Dc8GRp78aAku5EALw_wcB" class="stretched-link">
+                  <img src="static/assets/img/coaching.png" alt="Compléments alimentaires" class="img-fluid" style="margin-bottom: 10px; max-width: 40%; height: auto;">
+                  <h3>Coaching</h3>
+                </a>
+                <p>Des entraînements adaptés à vos objectifs et votre niveau.</p>
+            </div>
+         </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+                <a href="https://www.mesproteines.ma/" class="stretched-link">
+                  <img src="static/assets/img/complement.png" alt="Compléments alimentaires" class="img-fluid" style="margin-bottom: 10px; max-width: 40%; height: auto;">
+                  <h3>Compléments alimentaires</h3>
+                </a>
+                <p>Ils peuvent améliorer l’endurance, la force et la récupération.</p>
+            </div>
+         </div><!-- End Service Item -->
+
+          
+
+          
+
+          
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+   
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Contact Us</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.506341848524!2d-7.532742524303153!3d33.59216447333374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cdb604b01b8b%3A0xf7c94bdb48d49b8f!2sFitness%20Park%20Ain%20Sebaa!5e0!3m2!1sfr!2sma!4v1728594179522!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <div class="image-container me-3"> <!-- Remplacement de ms-auto par me-3 pour aligner l'image à gauche -->
+                <img src="static/assets/img/emplacement.png" alt="Description de l'image" class="img-fluid small-image" style="width: 50px;"> <!-- Chemin de votre image -->
+              </div>              <div>
+                <h3>Address</h3>
+                <p>Morocco, Casa</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <div class="image-container me-3"> <!-- Remplacement de ms-auto par me-3 pour aligner l'image à gauche -->
+                <img src="static/assets/img/adresse.png" alt="Description de l'image" class="img-fluid small-image" style="width: 50px;"> <!-- Chemin de votre image -->
+              </div>
+              <div>
+                <h3>Email Us</h3>
+                <p>mohamed.etud0@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+          
+
+         
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    <div class="container">
+      <p>&copy; 2024 PARKGYM. Tous droits réservés.</p>
+      <p>
+        <a href="https://www.facebook.com" class="text-white me-3" target="_blank">Facebook</a> |
+        <a href="https://www.twitter.com" class="text-white me-3" target="_blank">Twitter</a> |
+        <a href="https://www.instagram.com" class="text-white" target="_blank">Instagram</a>
+      </p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
+
+
+<footer id="footer" class="footer">
+  
+</footer>
+
